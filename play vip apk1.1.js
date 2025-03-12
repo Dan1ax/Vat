@@ -239,3 +239,63 @@ player.el().addEventListener('click', (e) => {
   // Inicializar la función para manejar el progreso del video
   manageVideoProgress(player);
 
+  // Mostrar el nombre del ajuste al centro de la pantalla
+  function showAdjustmentLabel(label) {
+      const labelDiv = document.createElement('div');
+      labelDiv.classList.add('vjs-adjustment-label');
+      labelDiv.textContent = label;
+      document.querySelector('.video-js').appendChild(labelDiv);
+  
+      setTimeout(() => {
+          labelDiv.remove();
+      }, 1500); // Mostrar por 1.5 segundos
+  }
+  
+  // Lógica para cambiar los ajustes
+  screenAdjustButton.addEventListener('click', () => {
+      if (!player.isFullscreen()) {
+          console.log("El control de ajuste es funcional solo en pantalla completa.");
+          return;
+      }
+  
+      currentAdjustmentIndex = (currentAdjustmentIndex + 1) % adjustments.length;
+      var selectedAdjustment = adjustments[currentAdjustmentIndex];
+  
+      var videoElement = player.el().querySelector('video');
+      var videoContainer = player.el();
+  
+      switch (selectedAdjustment) {
+          case 'cover':
+              videoElement.style.objectFit = 'cover';
+              break;
+          case 'fill':
+              videoElement.style.objectFit = 'fill';
+              break;
+          case 'fit-height':
+              videoElement.style.objectFit = 'contain';
+              videoElement.style.height = '100%';
+              videoElement.style.width = 'auto';
+              break;
+          case 'fit-width':
+              videoElement.style.objectFit = 'contain';
+              videoElement.style.width = '100%';
+              videoElement.style.height = 'auto';
+              break;
+          case 'scaledown':
+              videoElement.style.objectFit = 'contain';
+              videoElement.style.width = 'auto';
+              videoElement.style.height = 'auto';
+              videoContainer.style.display = 'flex';
+              videoContainer.style.justifyContent = 'center';
+              videoContainer.style.alignItems = 'center';
+              break;
+          case 'contain':
+              videoElement.style.objectFit = 'contain';
+              videoElement.style.width = '100%';
+              videoElement.style.height = '100%';
+              break;
+      }
+  
+      // Mostrar el nombre del ajuste
+      showAdjustmentLabel(selectedAdjustment);
+  });
