@@ -239,3 +239,31 @@ player.el().addEventListener('click', (e) => {
   // Inicializar la función para manejar el progreso del video
   manageVideoProgress(player);
 
+  
+  // Crear el botón de regreso con chevron
+  var backButton = document.createElement('a');
+  backButton.classList.add('boton-personalizado-vjs', 'boton-atrás-vjs');
+  botón_atrás.innerHTML = '<span class="material-icons">chevron_left</span>';
+  
+  // Agregar funcionalidad al botón
+  backButton.addEventListener('clic', función () {
+      // Pausar el video
+      jugador.pause();
+  
+      // Salir del modo pantalla completa si está activado
+      si (jugador.isFullscreen()) {
+          jugador.exitFullscreen();
+      }
+  
+      // Ocultar o cerrar el reproductor (opcional, dependiendo de cómo esté configurado tu reproductor)
+      var playerContainer = document.getElementById('jugador');
+      si (contenedorJugador) {
+          playerContainer.style.display = 'ninguno'; // Ocultar el reproductor
+      }
+  
+      // Restablecer orientación al salir
+      si (pantalla.orientación && pantalla.orientación.desbloqueo) {
+          pantalla.orientacion.desbloquear();
+      }
+  });
+
