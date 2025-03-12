@@ -299,3 +299,46 @@ player.el().addEventListener('click', (e) => {
       // Mostrar el nombre del ajuste
       showAdjustmentLabel(selectedAdjustment);
   });
+  
+      currentAdjustmentIndex = (currentAdjustmentIndex + 1) % ajustes.longitud;
+      var selectedAdjustment = ajustes[índiceDeAjusteActual];
+  
+      var videoElement = player.el().querySelector('vídeo');
+      var videoContainer = player.el();
+  
+      interruptor (ajuste seleccionado) {
+          caso 'cubierta':
+              videoElement.style.objectFit = 'portada';
+              romper;
+          caso 'rellenar':
+              videoElement.style.objectFit = 'relleno';
+              romper;
+          caso 'fit-height':
+              videoElement.style.objectFit = 'contiene';
+              videoElement.style.height = '100%';
+              videoElement.style.width = 'automático';
+              romper;
+          caso 'ancho de ajuste':
+              videoElement.style.objectFit = 'contiene';
+              videoElement.style.width = '100%';
+              videoElement.style.height = 'auto';
+              romper;
+          caso 'scaledown':
+              videoElement.style.objectFit = 'contiene';
+              videoElement.style.width = 'automático';
+              videoElement.style.height = 'auto';
+              videoContainer.style.display = 'flex';
+              videoContainer.style.justifyContent = 'centro';
+              videoContainer.style.alignItems = 'centro';
+              romper;
+          caso 'contiene':
+              videoElement.style.objectFit = 'contiene';
+              videoElement.style.width = '100%';
+              videoElement.style.height = '100%';
+              romper;
+      }
+  
+      // Mostrar el nombre del ajuste
+      showAdjustmentLabel(ajuste seleccionado);
+  });
+  
