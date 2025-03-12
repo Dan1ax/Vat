@@ -260,7 +260,20 @@ player.el().addEventListener('click', (e) => {
       si (contenedorJugador) {
           playerContainer.style.display = 'ninguno'; // Ocultar el reproductor
       }
+        .vjs-top-controls .iconos-de-material {
+          tamaño de fuente: 60px; /* Iconos más grandes */
+      }
   
+      /* Contenedor de los controles de Reiniciar y Next (debajo de los Seek/Play) */
+      .vjs-controles-inferiores {
+          pantalla:flexible;
+          justificar-contenido: centro;
+          alinear-elementos: centro;
+          posición: absoluta;
+          abajo: -90px; /* Mover los controles Reiniciar/Next hacia abajo */
+          ancho: 100%;
+          espacio: 50px; /* Añadir separación entre los controles Reiniciar y Next */
+      }
       // Restablecer orientación al salir
       si (pantalla.orientación && pantalla.orientación.desbloqueo) {
           pantalla.orientacion.desbloquear();
