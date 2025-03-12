@@ -44,7 +44,7 @@ bottomControls.classList.add('vjs-bottom-controls');
 
 var restartButton = document.createElement('button');
 restartButton.classList.add('vjs-custom-button', 'vjs-restart');
-restartButton.innerHTML = '<span class="material-icons">skip_previous</span> Reproducir Desde El Inicio';
+restartButton.innerHTML = '<span class="material-icons">skip_previous</span> Reinicio';
 bottomControls.appendChild(restartButton);
 
 customControls.appendChild(bottomControls);
