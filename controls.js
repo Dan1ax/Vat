@@ -292,4 +292,4 @@ player.el().addEventListener('click', (e) => {
               videoElement.style.width = '100%';
               videoElement.style.height = '100%';
               romper;
-      };
+      }
