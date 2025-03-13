@@ -426,7 +426,7 @@ var player = videojs('player', {
 controlBar: {
 playToggle: false, // Eliminar el control de Play
 volumePanel: false, // Eliminar el control de volumen
-fullscreenToggle: true, // Eliminar el control de pantalla completa
+fullscreenToggle: false, // Eliminar el control de pantalla completa
 pipToggle: true, // Eliminar el control Picture-in-Picture
 progressControl: true, // Mantener la barra de progreso visible
 remainingTimeDisplay: true, // Mostrar el tiempo restante
