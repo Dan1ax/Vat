@@ -3,115 +3,21 @@
     <Ad id="1">
         <InLine>
             <AdSystem>GDPlayer</AdSystem>
-            <AdTitle>Video con Anuncios Intersticiales</AdTitle>
-            <Description>Reproductor con anuncios de fondo</Description>
-            <AdServingType>video</AdServingType>
-            
+            <AdTitle>intro </AdTitle>
             <Creatives>
-                <!-- Anuncio Principal -->
                 <Creative id="2" sequence="1">
                     <Linear skipoffset="00:00:04">
                         <Duration>00:00:03</Duration>
                         <VideoClicks>
-                            <ClickThrough id="blog"><![CDATA[https://tusitio.com/anuncio]]></ClickThrough>
-                            <CustomClick>https://tusitio.com/seguimiento</CustomClick>
+                            <ClickThrough id="blog"><![CDATA[#]]></ClickThrough>
+                            <CustomClick>#</CustomClick>
                         </VideoClicks>
                         <MediaFiles>
-                            <MediaFile id="3" delivery="progressive" type="video/mp4" scalable="1" maintainAspectRatio="1" codec="0" apiFramework="VAST">
-                                <![CDATA[https://github.com/NewCeodel2022/Sbstreamfono/raw/main/ads2.mp4]]>
-                            </MediaFile>
+                            <MediaFile id="3" delivery="progressive" type="video/mp4" scalable="1" maintainAspectRatio="1" codec="0" apiFramework="VAST"><![CDATA[https://github.com/NewCeodel2022/Sbstreamfono/raw/main/ads2.mp4]]></MediaFile>
                         </MediaFiles>
                     </Linear>
                 </Creative>
-
-                <!-- Anuncio Display Intersticial -->
-                <Creative id="4" sequence="2">
-                    <CompanionAds>
-                        <Companion id="5" width="300" height="250" expandedWidth="600" expandedHeight="400">
-                            <StaticResource creativeType="image/png">
-                                <![CDATA[https://ejemplo.com/anuncio-fondo.png]]>
-                            </StaticResource>
-                            <CompanionClickThrough>
-                                <![CDATA[https://tusitio.com/anuncio-intersticial]]>
-                            </CompanionClickThrough>
-                            <CompanionClickTracking>
-                                <![CDATA[https://tusitio.com/tracking/click]]>
-                            </CompanionClickTracking>
-                            <CreativeExtensions>
-                                <CreativeExtension type="background">
-                                    <Background>
-                                        <Color>#000000</Color>
-                                        <Opacity>0.7</Opacity>
-                                    </Background>
-                                </CreativeExtension>
-                            </CreativeExtensions>
-                        </Companion>
-                    </CompanionAds>
-                </Creative>
-
-                <!-- Anuncio de Video con Overlay -->
-                <Creative id="6" sequence="3">
-                    <NonLinearAds>
-                        <NonLinear id="7" width="728" height="90" expandedWidth="728" expandedHeight="90">
-                            <StaticResource creativeType="image/jpeg">
-                                <![CDATA[https://ejemplo.com/banner-overlay.jpg]]>
-                            </StaticResource>
-                            <NonLinearClickThrough>
-                                <![CDATA[https://tusitio.com/banner]]>
-                            </NonLinearClickThrough>
-                            <NonLinearClickTracking>
-                                <![CDATA[https://tusitio.com/tracking/banner-click]]>
-                            </NonLinearClickTracking>
-                        </NonLinear>
-                    </NonLinearAds>
-                </Creative>
             </Creatives>
-
-            <!-- Extensiones para fondo de video -->
-            <Extensions>
-                <Extension type="background_ad">
-                    <BackgroundAd>
-                        <Url><![CDATA[https://pl24890583.effectivecpmnetwork.com/b1/0c/7f/b10c7fbd95d87c870adfd13bd1cdbdcb.js]]></Url>
-                        <FallbackImage><![CDATA[https://ejemplo.com/fallback-image.jpg]]></FallbackImage>
-                        <Targeting>
-                            <Position>behind_video</Position>
-                            <ZIndex>0</ZIndex>
-                            <Scale>cover</Scale>
-                        </Targeting>
-                    </BackgroundAd>
-                </Extension>
-
-                <Extension type="custom_js">
-                    <Script>
-                        <![CDATA[
-                            // Función para cargar anuncios de fondo
-                            function loadBackgroundAd() {
-                                var script = document.createElement('script');
-                                script.src = 'https://pl24890583.effectivecpmnetwork.com/b1/0c/7f/b10c7fbd95d87c870adfd13bd1cdbdcb.js';
-                                script.async = true;
-                                document.head.appendChild(script);
-                            }
-                            
-                            // Iniciar al cargar el reproductor
-                            if (typeof videojs !== 'undefined') {
-                                videojs.ready(function() {
-                                    loadBackgroundAd();
-                                });
-                            }
-                        ]]>
-                    </Script>
-                </Extension>
-
-                <!-- Seguimiento de impresiones -->
-                <Extension type="tracking">
-                    <Impression>
-                        <![CDATA[https://tusitio.com/tracking/impression]]>
-                    </Impression>
-                    <Error>
-                        <![CDATA[https://tusitio.com/tracking/error]]>
-                    </Error>
-                </Extension>
-            </Extensions>
         </InLine>
     </Ad>
-</VAST>
+</VAST> mejorar este codigo para agregarle anuncios que salga detras del video como este <script src="https://pl24890583.effectivecpmnetwork.com/b1/0c/7f/b10c7fbd95d87c870adfd13bd1cdbdcb.js"></script>
